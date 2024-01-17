@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(115, 127, 136);
+    color: white;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+li {
+    font-size: 24px;
+    list-style-type: none;
+}
+
+a {
+    color: rgb(7, 54, 7);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(44, 187, 44);
+    text-decoration: overline;
+}

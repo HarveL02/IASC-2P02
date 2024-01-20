@@ -1,8 +1,25 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="../style.css">
+    <title>Basic Scene Prototype</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- three.js importmap -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://ga.jspm.io/npm:three@0.158.0/build/three.module.js"
+            }
+        }
+    </script>
+
+    <!-- Three.js Scene -->
+    <!-- Crucial to add the type -->
+    <script src="script.js" type="module"></script>
 </head>
 
 <body>
-    <h1>Week 3 Prototype goes here</h1>
+    <h1>Three.js Basic Scene</h1>
+    <canvas class="webgl"></canvas>
 </body>

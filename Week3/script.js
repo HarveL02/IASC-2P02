@@ -8,7 +8,7 @@ const canvas = document.querySelector('.webgl')
 
 // Scene - like a movie set the actual scene
 const scene = new THREE.Scene()
-scene.background = new THREE.Color('grey')
+scene.background = new THREE.Color("rgb(29, 31, 68)")
 
 // Camera - self explanatory - added into the scene
 const camera = new THREE.PerspectiveCamera(
@@ -32,12 +32,16 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 /************
  ** MESHES **
 ************/
-// testSphere
-const sphereGeometry = new THREE.SphereGeometry(1)
-const sphereMaterial = new THREE.MeshNormalMaterial()
-const testSphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
 
-scene.add(testSphere)
+// torusKnot
+
+const torusKnotGeometry = new THREE.TorusKnotGeometry(0.4, 0.2, 64, 8, 9, 3)
+const torusKnotMaterial = new THREE.MeshNormalMaterial()
+const testTorusKnot = new THREE.Mesh(torusKnotGeometry, torusKnotMaterial)
+const testTorusKnot2 = new THREE.Mesh(torusKnotGeometry, torusKnotMaterial)
+
+scene.add(testTorusKnot)
+scene.add(testTorusKnot2)
 
 /********************
  ** ANIMATION LOOP **
@@ -49,9 +53,23 @@ const animation = () =>
     // Return elapsedTime
     const elapsedTime = clock.getElapsedTime()
     
-    // Animate testSphere
-    testSphere.position.z = Math.sin(elapsedTime)
-    // best way is to use sine and cosine
+    // Animating Objects
+
+    //Rotations
+    testTorusKnot.rotation.x = elapsedTime
+    testTorusKnot.rotation.y = elapsedTime
+
+    testTorusKnot2.rotation.x = elapsedTime
+    testTorusKnot2.rotation.y = elapsedTime
+
+    //Scale
+    testTorusKnot2.scale.x = Math.sin(elapsedTime)
+    testTorusKnot2.scale.y = Math.sin(elapsedTime)
+    testTorusKnot2.scale.z = Math.sin(elapsedTime)
+
+    //Positions
+    testTorusKnot.position.x = Math.cos(elapsedTime * 1.3)
+    testTorusKnot2.position.x = Math.sin(elapsedTime)
 
     // Renderer - remember these are all variables that have been declared
     renderer.render(scene, camera)

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>Assignment 1</title>
+
+    <!-- css -->
+    <link rel='stylesheet' href="style.css">
+
+    <!-- three.js importmap -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://ga.jspm.io/npm:three@0.158.0/build/three.module.js",
+                "OrbitControls": "https://ga.jspm.io/npm:three@0.158.0/examples/jsm/controls/OrbitControls.js",
+                "lil-gui": "https://ga.jspm.io/npm:lil-gui@0.19.1/dist/lil-gui.esm.js"
+            }
+        }
+    </script>
+
+    <!-- three.js scene -->
+    <script src="script.js" type="module"></script>
+    
+</head>
+<body>
+    <h1>Interactive Essay</h1>
+    <h2>Leah Harvey</h2>
+
+    <!-- Part One -->
+    <section id="part-one">
+        <h2>1. Flatness</h2>
+
+        <p>In my vision, there is grey. It is ordinary. Monotone. The only fluctuations are the shapes, a few shades darker than the rest. To the left, a rounded edge, circling around, yet incomplete. A sharp cut. A mouth like my own. Could it be another living creature like me? The creature <span class="clickable" id="move-right">begins to move</span>, ambling to the right with intent. It reaches another small, rounded form. This piece is lifeless, like a short pellet. Long and curved at the ends, the piece is unwavering as the larger creature - its mouth still wide open - grows closer. Just as the mouth reaches the pellet, <span class="clickable" id="closed">it closes</span>. As it closes, the small shape disappears, and I am struck with the unmistakeable sense of fear. Did this form, this simple looking circle, just <i>eat</i> another? As I contemplate, the shape moves again, towards the left, <span class="clickable" id="open">and the mouth opens</span>. The smaller shape is gone. I am confused. I am awed. Is this form a living, breathing thing? How do the two become one? There is a presence of danger. The mouth hangs open, the pellet is gone and dead. And I no longer feel safe in my cave.</p>
+
+        <p>Defining the concept of flatness comes with its challenges. In the simplest form, flatness can be described as a lack of depth. There is no looking upwards. No moving towards or away. There is no such thing as “behind,” or “in front.” Nothing beyond the four points on a compass. Within the scope of flatness, there is no way to elaborate on what someone perceives. There is only what they see, and no way to work around it. The inhabitants of the cave cannot see past the flatness they live in. When all they see is shadows, there is no more depth or shape to them. They cannot see an item move closer or farther away from them. In the example above, the people in the cave cannot see where the second, smaller object goes. Instead of remaining separate entities, the two objects become one. One “eats” another. In this regard, the people are unable to conceptualize any possibilities beyond the formless shapes. They must take things at face value. If one item blends with another, they are no longer separate entities. In this, there is no way to perceive more than one concrete reason for the existence and actions of these shadows. Their perspective is fixed and unmoving, where a secondary truth simply <i>does not exist</i>.</p>
+
+        <p><span class="clickable" id="continue-reading">Continue reading</span></p>
+    </section>
+
+    <!-- Part Two -->
+    <section id="part-two" class="hidden">
+        <h2>2. Seeing Double</h2>
+
+        <p>Outside of the cave, my partner holds a lamp. With harsh light, it casts upon two objects, and further upon the wall of the cave. As the light reaches the wall, a shadow is cast, darkening where the light cannot pass through the objects. A sphere, cut out with a shape resembling a mouth. And a small, pill shape, just to the right. A real prankster, my partner  <span class="clickable" id="sun-moves">sways the lamp</span> back and forth, shifting the angles that the light can reach. As a result, the shadows also move back and forth, chasing each other, while the objects themselves remain static. My partner nods their head, and I move to the sphere, <span class="clickable" id="pac-rotate">spinning it on its axis</span>. As the cutout shifts, covered by the remaining object, light cannot pass and the circular shadow becomes whole. And then, the cutout is uncovered again, leaving a quarter of the circle missing again. As it continues to spin, eventually, a full half of the circle is missing from the shadow. The cycle continues as the sphere continues to spin.</p> 
+
+        <p>To define the concept of seeing double, I would reiterate the concept of flatness. Flatness is a fixed, single viewpoint. There is one answer to a question, and no room for further elaboration. Seeing double is intersecting, stacking, or combining multiple viewpoints. A process of <i>Unflattening</i>. Seeing double is like moving between two opposite ends of a spectrum. You take information from two opposite ends, and jointly use the context of both to form a more expansive viewpoint. In this, multiple options and reasonings can be considered. Context to provide multiple truths of the fact. Within the context of this example, a notable contrast is the perception of motion. For example, the people in the cave would perceive the sphere and the pellet both as moving back and forth. However, outside the cave it is evident that the lamp is moving, and the two objects are static. In truth, there is a necessary relationship between the system of objects. The people in the cave may believe the smaller shape is being constantly chased by the larger one. However, it is simply not moving. The shadow cast by an object depends on <i>which object is moving</i>. The smaller item is not moving, however it appears so due to the angle of light consistently changing. The smaller item could also appear to be moving if it were actually moving. Two different actions, causing the same reaction. A layered system. It is impossible to come to the truth of these relationships using just the “flat” perspective, or just the “birds eye” perspective. There needs to be an understanding of both.</p>
+
+        <p><span class="clickable" id="restart">Restart</span></p>
+    </section>
+
+    <canvas class="webgl"></canvas>
+</body>

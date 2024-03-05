@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>3D Portfolio</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- three.js importmap -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://ga.jspm.io/npm:three@0.158.0/build/three.module.js",
+                "OrbitControls": "https://ga.jspm.io/npm:three@0.158.0/examples/jsm/controls/OrbitControls.js",
+                "lil-gui": "https://ga.jspm.io/npm:lil-gui@0.19.1/dist/lil-gui.esm.js"
+            }
+        }
+    </script>
+
+    <!-- three.js -->
+    <script src="script.js" type="module"></script>
+</head>
+
+<body>
+    <!-- canvas -->
+    <canvas class="webgl"></canvas>
+
+    <!-- Splash (persisting and not disappearing) -->
+    <section class="splash">
+        <h1>Leah Harvey</h1>
+    </section>
+
+    <!-- Content (different changing sections) -->
+    <section class="content" id="first">
+        <h1>About Me</h1>
+        <p>My name is Leah. I am a student in the IASC program, hoping to pursue a career in either writing or some form of design. I love video games, and have dedicated more of my life savings than I would like to admit to the Final Fantasy series.</p>
+        <p><span class="clickable" id="click1">View Projects</span></p>
+    </section>
+
+    <section class="content hidden" id="second">
+        <h1>Interactive Essay</h1>
+        <p>My interactive essay focuses on Nick Sousanis' concepts of flatness and seeing double. In this example, my points are demonstrated with a customized represenation of Plato's Allegory of the Cave. My Cave scene includes a familiar face, for those who continue to appreciate arcade games :D</p>
+        <p><span class="clickable" id="click2">Next Project</span></p>
+    </section>
+    
+    <section class="content hidden" id="third">
+        <h1>Data Visualization</h1>
+        <p>While this project is not quite complete yet, based on the course Syllabus, I am interested in working with the "Chaos Walking" book series, by Patrick Ness. This was one of my favourite series in my teens, as the construction of language and use of perspective were fascinating. I also simply love a good dystopian story. I would like to use data visualizations to compare the changing perspectives throughout the series. For example, the main character views an alien race as hostiles, and by the end of the series, comes to learn that the enemies are actually the townspeople he aligns himself with.</p>
+        <p><span class="clickable" id="click3">Back to Home.</span></p>
+    </section>
+
+</body>

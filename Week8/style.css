@@ -1,0 +1,55 @@
+body {
+    background-color: #404040;
+    margin: 0 auto;
+    color: white;
+}
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -1;
+}
+
+.splash {
+    position: absolute;
+    margin: 0 auto;
+    padding-left: 4%;
+    text-align: left;
+    width: 100%;
+}
+
+.splash h1 {
+    font-size: 70px;
+    text-decoration: underline;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 40px;
+    padding-left: 50%;
+
+}
+
+.content h1 {
+    color: greenyellow;
+
+    margin-bottom: 0px;
+}
+
+.clickable {
+    color: olivedrab;
+    cursor: grab;
+}
+
+.clickable:hover {
+    color: bisque;
+    text-decoration: overline;
+}
+
+.hidden {
+    display: none;
+}

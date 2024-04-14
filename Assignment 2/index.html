@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <title>Data Visualization Assignment</title>
+
+    <!--- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- three.js importmap -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://ga.jspm.io/npm:three@0.158.0/build/three.module.js",
+                "OrbitControls": "https://ga.jspm.io/npm:three@0.158.0/examples/jsm/controls/OrbitControls.js",
+                "lil-gui": "https://ga.jspm.io/npm:lil-gui@0.19.1/dist/lil-gui.esm.js"
+            }
+        }
+    </script>
+
+    <!-- dta viz 1 -->
+    <script src="script.js" type="module"></script>
+
+    <!-- dta viz 1 -->
+    <script src="script2.js" type="module"></script>
+</head>
+<body>
+    <h1>Essay Title</h1>
+    <h2>Leah Harvey</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor quam tortor, eu eleifend nunc vulputate et. Curabitur ut pretium erat, fringilla faucibus nisi. Vivamus luctus neque eget odio pulvinar scelerisque. Nunc efficitur risus id nisl accumsan, ac fringilla quam consequat. Maecenas hendrerit, purus ac volutpat pharetra, neque mi congue dolor, at ultrices leo neque at est. Donec fermentum non risus sit amet volutpat. Cras placerat eget eros nec convallis. Vestibulum posuere diam risus. Mauris id orci imperdiet, facilisis sapien id, imperdiet sem. Cras ullamcorper nisl neque, at condimentum tellus venenatis in.</p>
+
+    <p>Aenean id aliquam ligula. Nam a posuere augue. Aliquam fermentum pretium volutpat. Sed nunc velit, bibendum non tellus sed, dignissim bibendum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis consectetur massa. Phasellus quis augue at nibh dignissim vehicula. Ut a turpis at risus mattis imperdiet. Donec mi purus, ornare id malesuada id, venenatis non sem.</p>
+
+    <!-- Data Viz 1 -->
+    <div class="canvas-container">
+        <h2>Objects in Harry Potter</h2>
+        <!---
+        <ul>
+            <li id="red">Word 1</li>
+            <li id="green">Word 2</li>
+            <li id="blue">Word 3</li>
+        </ul> -->
+        <canvas class="webgl"></canvas>
+        <div id="parent1"></div>
+        <p>Left click and drag to rotate. Right click and drag to move. Scroll to zoom.</p>
+    </div>
+
+    <p>Nam semper felis ipsum, eu mattis tortor mattis a. Nullam iaculis, nulla in placerat porta, felis dolor facilisis erat, sed dapibus tellus ipsum non purus. Aenean eu arcu ut mi dapibus molestie. Nunc malesuada commodo libero quis fringilla. Phasellus feugiat arcu laoreet lorem vulputate dignissim. Nam libero massa, accumsan quis sollicitudin quis, sagittis id justo. Sed rhoncus et quam eu laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+    <p>Fusce sapien ipsum, condimentum placerat nibh ut, ultricies auctor leo. Sed porta dolor non finibus tincidunt. Fusce augue risus, pharetra nec justo vitae, consectetur congue diam. Nullam posuere ut arcu tristique mattis. Duis condimentum a tellus at aliquet. Vestibulum in mollis tortor, non egestas est. Fusce commodo commodo magna eu vestibulum.</p>
+
+    <!-- Data Viz 2 -->
+    <div class="canvas-container">
+        <h2>Something else in Harry Potter</h2>
+        <!---
+        <ul>
+            <li id="red">Word 1</li>
+            <li id="green">Word 2</li>
+            <li id="blue">Word 3</li>
+        </ul> -->
+        <canvas class="webgl2"></canvas>
+        <div id="parent2"></div>
+        <p>Left click and drag to rotate. Right click and drag to move. Scroll to zoom.</p>
+    </div>
+
+    <p>Vivamus ut dolor at diam faucibus convallis. Fusce sit amet tortor vel quam porta faucibus ac sed lorem. Nunc sit amet magna tellus. Cras tempus risus et ornare faucibus. Nullam ex urna, tincidunt mollis mollis lobortis, pretium ac ligula. Aenean pellentesque luctus nulla eu faucibus. Suspendisse vel nibh eleifend, consequat tortor hendrerit, congue arcu. Nunc vitae elit erat. Fusce semper pharetra orci, finibus tempus mauris tincidunt sit amet. Nullam tempor nulla porta commodo vestibulum.</p>
+</body>

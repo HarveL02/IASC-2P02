@@ -29,7 +29,7 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     100
 )
-camera.position.set(0, 0, 20)
+camera.position.set(35, 0, 35)
 scene.add(camera)
 
 // Renderer
@@ -46,36 +46,43 @@ controls.enableDamping = true
 /************
  ** LIGHTS **
  ***********/
-// Directional Light
-const directionalLight = new THREE.DirectionalLight(0x404040, 100)
-scene.add(directionalLight)
+// Directional Lights
+const directionalLight1 = new THREE.DirectionalLight(0x404040, 100)
+scene.add(directionalLight1)
+directionalLight1.position.set(4,22,12)
 
 
 /************
  ** MESHES **
  ***********/
-// Cube Geometry
-const cubeGeometry = new THREE.SphereGeometry(0.5)
+// Sphere Geometry
+const sphereGeometry = new THREE.BoxGeometry(0.5)
 
-// Cube Materials
-const redMaterial = new THREE.MeshStandardMaterial({ color: new THREE.Color('orange')})
-const greenMaterial = new THREE.MeshStandardMaterial({ color: new THREE.Color('pink')})
-const blueMaterial = new THREE.MeshStandardMaterial({ color: new THREE.Color('aqua')})
+// Sphere Materials
+const term1Material = new THREE.MeshStandardMaterial({ color: new THREE.Color('#ffcc66')})
+const term2Material = new THREE.MeshStandardMaterial({ color: new THREE.Color('#ff9900')})
+const term3Material = new THREE.MeshStandardMaterial({ color: new THREE.Color('#cc3300')})
 
-const drawCube = (i, material) =>
+for (let a = 0; a < 10; a++){
+    const test = Math.random()
+    console.log(test)
+}
+
+const drawSphere = (i, material, position) =>
 {
-    const cube = new THREE.Mesh(cubeGeometry, material)
-    cube.position.x = (Math.random() - 0.5) * 10
-    cube.position.z = (Math.random() - 0.5) * 10
-    cube.position.y = i - 10
+    const sphere = new THREE.Mesh(sphereGeometry, material)
+    sphere.position.x = position
+    
+    //(Math.random() - (position)) * 10
+    //sphere.rotation.z = 1.5
 
-    cube.rotation.x = Math.random() * 2 * Math.PI
-    cube.rotation.y = Math.random() * 2 * Math.PI
-    cube.rotation.z = Math.random() * 2 * Math.PI
+    sphere.position.z = (Math.random() - (position/3)) * 10
+    sphere.position.y = i - 15
 
-    cube.randomizer = Math.random()
+    sphere.randomizer = Math.random()
+    
 
-    scene.add(cube)
+    scene.add(sphere)
 }
 
 
@@ -87,12 +94,13 @@ let preset = {}
  const uiobj = {
     text: '',
     textArray: [],
-    term1: 'work',
-    term2: 'love',
-    term3: 'dream',
+    term1: 'jo',
+    term2: 'laurie',
+    term3: 'amy',
     rotateCamera: false,
-    animateBubbles: false
+    isolateView: false
 }
+
 
 
 // Text Parsers
@@ -110,17 +118,17 @@ const parseTextandTerms = () =>
     //console.log(uiobj.textArray)
 
     // Find Term 1
-    findTermInParsedText(uiobj.term1, redMaterial)
+    findTermInParsedText(uiobj.term1, term1Material, 5)
 
     // Find Term 2
-    findTermInParsedText(uiobj.term2, greenMaterial)
+    findTermInParsedText(uiobj.term2, term2Material, 0)
 
     // Find Term 3
-    findTermInParsedText(uiobj.term3, blueMaterial)
+    findTermInParsedText(uiobj.term3, term3Material, -5)
 
 }
 
-const findTermInParsedText = (term, material) =>
+const findTermInParsedText = (term, material, position) =>
 {
     for (let i = 0; i < uiobj.textArray.length; i++)
     {
@@ -129,13 +137,11 @@ const findTermInParsedText = (term, material) =>
         {
             //console.log(i, term)
             // convert i into n, which is a value between 0 and 20
-            const n = (100 / uiobj.textArray.length) * i * 0.2
+            const n = (100 / uiobj.textArray.length) * i * 0.3
             
-            // call drawCube function 5 times using converted n value
-            for (let a = 0; a < 5; a++)
-            {
-                drawCube(n, material)
-            }
+            // call drawSphere function 5 times using converted n value
+            drawSphere(n, material, position)
+
             
         }
     }
@@ -160,23 +166,24 @@ const ui = new dat.GUI({
 
 // Interaction Folders
     // Spheres Folder
-    const cubesFolder = ui.addFolder('Filter Terms')
+    const spheresFolder = ui.addFolder('Filter Terms')
 
-    cubesFolder
-        .add(redMaterial, 'visible')
+    spheresFolder
+        .add(term1Material, 'visible')
         .name(`${uiobj.term1}`)
 
-    cubesFolder
-        .add(greenMaterial, 'visible')
+    spheresFolder
+        .add(term2Material, 'visible')
         .name(`${uiobj.term2}`)
 
-    cubesFolder
-        .add(blueMaterial, 'visible')
+    spheresFolder
+        .add(term3Material, 'visible')
         .name(`${uiobj.term3}`)
 
-    cubesFolder
-        .add(uiobj, 'animateBubbles')
-        .name('Animate Bubbles')
+    spheresFolder
+        .add(uiobj, 'isolateView')
+        .name('Isolated View')
+        
 
     // Camera Folder
     const cameraFolder = ui.addFolder('Camera')
@@ -184,7 +191,6 @@ const ui = new dat.GUI({
     cameraFolder
         .add(uiobj, 'rotateCamera')
         .name('Rotate Camera')
-
 
 
 /********************
@@ -205,30 +211,25 @@ const animation = () =>
     // Camera Rotation
     if(uiobj.rotateCamera)
     {
-        camera.position.x = Math.sin(elapsedTime * 0.2) * 20
-        camera.position.z = Math.cos(elapsedTime * 0.2) * 20
+        camera.position.x = Math.sin(elapsedTime * 0.2) * 40
+        camera.position.z = Math.cos(elapsedTime * 0.2) * 40
 
     }
 
-    // Animate Bubbles
-    if(uiobj.animateBubbles)
+    // Isolate View
+    if(uiobj.isolateView)
     {
+        camera.position.set(40,0,10)
        for(let i=0; i < scene.children.length; i++)
        {
-            if(scene.children[i].type === "Mesh")
+            if(scene.children[i].position.y < 7)
             {
-                scene.children[i].scale.x = Math.sin(elapsedTime * scene.children[i].randomizer)
-                scene.children[i].scale.y = Math.sin(elapsedTime * scene.children[i].randomizer)
-                scene.children[i].scale.z = Math.sin(elapsedTime * scene.children[i].randomizer)
-                /*if(scene.children[i].position.y < 0)
-                {
-                    scene.children[i].position.z += 0.1
-                }*/
-
+                scene.children[i].position.x -= 1
             }
+
        }
     }
-
+    
 
     // Renderer
     renderer.render(scene, camera)

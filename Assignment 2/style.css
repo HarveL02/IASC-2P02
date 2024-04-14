@@ -71,13 +71,30 @@ ul > li {
 }
 
 #lil-gui-name-1 {
-    color: red;
+    color: #66ff99;
 }
 
 #lil-gui-name-2 {
-    color: green;
+    color: #99ccff;
 }
 
 #lil-gui-name-3 {
-    color: blue;
+    color: #ff66cc;
 }
+
+#lil-gui-name-4 {
+    color: #ffff66;
+}
+
+#lil-gui-name-7 {
+    color: #ffcc66;
+}
+
+#lil-gui-name-8 {
+    color: #ff9900;
+}
+
+#lil-gui-name-9 {
+    color: #cc3300;
+}
+
